@@ -56,6 +56,11 @@ namespace Bakery.Models
   
   public class Pastry 
   {
+    public int AmountOfPastry{ get; set; }
 
+    public Pastry(int amountOfPastry)
+    {
+      AmountOfPastry = amountOfPastry;
+    }
   }
 }
