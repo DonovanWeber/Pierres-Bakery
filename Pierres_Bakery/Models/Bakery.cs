@@ -57,10 +57,28 @@ namespace Bakery.Models
   public class Pastry 
   {
     public int AmountOfPastry{ get; set; }
+    private static int _Price = 2;
 
     public Pastry(int amountOfPastry)
     {
       AmountOfPastry = amountOfPastry;
+    }
+    public int CalculatePriceOfPastry()
+    {
+      int totalPrice = 0;
+      
+      if(AmountOfPastry == 0)
+      {
+        return totalPrice;
+      }
+      else if (AmountOfPastry < 3)
+      {
+        for(int i = 0; i < AmountOfPastry; i++)
+        {
+          totalPrice += _Price;
+        }
+      }
+      return totalPrice;
     }
   }
 }
