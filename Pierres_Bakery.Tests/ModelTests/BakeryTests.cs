@@ -1,8 +1,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Bakery.Models;
 using System;
+using System.Collections.Generic;
 
-namespace Pierres_Bakery.Tests
+namespace PierresBakery.Tests
 {
   [TestClass]
   public class BakeryTests
@@ -13,5 +14,12 @@ namespace Pierres_Bakery.Tests
       Bread newOrder = new Bread(1);
       Assert.AreEqual(typeof(Bread), newOrder.GetType());
     } 
+    [TestMethod]
+    public void CalculatePriceOfBread_GetsPriceOfBread_Int()
+    {
+      Bread newOrder = new Bread(1);
+      int costOfOneBread = 5;
+      Assert.AreEqual(costOfOneBread,newOrder.CalculatePriceOfBread(1));
+    }
   }
 }
