@@ -78,6 +78,15 @@ namespace Bakery.Models
           totalPrice += _Price;
         }
       }
+      else if(AmountOfPastry % 3 == 0 ) 
+      {
+    
+        int amountOfDiscounts = AmountOfPastry / 3;
+        for (int i = 1; i <= amountOfDiscounts; i++)
+        {
+          totalPrice += 5;
+        }
+      }
       return totalPrice;
     }
   }
