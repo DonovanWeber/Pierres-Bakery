@@ -32,8 +32,8 @@ namespace PierresBakery.Tests
     public void CalculatePriceOfBread_GetPriceOfThreeWithDiscount_Int()
     {
       Bread newOrder = new Bread(3);
-      int costOfThreeBread = 10;
-      Assert.AreEqual(costOfThreeBread, 4);
+      int costOfThreeBreadWithDiscount = 10;
+      Assert.AreEqual(costOfThreeBreadWithDiscount, newOrder.CalculatePriceOfBread());
     }
   }
 }
