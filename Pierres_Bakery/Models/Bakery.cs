@@ -87,6 +87,18 @@ namespace Bakery.Models
           totalPrice += 5;
         }
       }
+      else if (AmountOfPastry > 3)
+      {
+        int discount = 5;
+        int amountOfPastriesAfterDiscount = AmountOfPastry % 3; 
+        int discountedPastry = AmountOfPastry - amountOfPastriesAfterDiscount;
+        int priceOfExtraPastry = amountOfPastriesAfterDiscount * _Price;
+        for (int i = 0; i <= amountOfPastriesAfterDiscount; i += 3)
+        {
+          totalPrice += discountedPastry / 3 * discount;
+        }
+        totalPrice += priceOfExtraPastry;
+      }
       return totalPrice;
     }
   }
