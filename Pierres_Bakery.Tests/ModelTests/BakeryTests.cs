@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Pierres_Bakery;
+using Bakery.Models;
+using System;
 
 namespace Pierres_Bakery.Tests
 {
@@ -9,7 +10,7 @@ namespace Pierres_Bakery.Tests
     [TestMethod]
     public void BreadConstructor_CreateInstanceOfBread_Bread()
     {
-      Bread newOrder = new Bread(1, 5);
+      Bread newOrder = new Bread(1);
       Assert.AreEqual(typeof(Bread), newOrder.GetType());
     } 
   }
