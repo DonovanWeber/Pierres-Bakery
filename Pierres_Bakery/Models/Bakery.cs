@@ -21,13 +21,6 @@ namespace Bakery.Models
       {
         totalPrice += 0;
       }
-      else if (AmountOfBread < 3)
-      {
-        for(int i = 0; i < AmountOfBread; i++)
-        {
-          totalPrice += _Price;
-        }
-      }
       else if (AmountOfBread % 3 == 0)
       {
         for(int i = 0; i < AmountOfBread; i += 3)
