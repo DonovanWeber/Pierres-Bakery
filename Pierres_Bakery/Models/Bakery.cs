@@ -12,7 +12,6 @@ namespace Bakery.Models
     public Bread(int bread)
     {
       AmountOfBread = bread;
-      // Price = price; 
     }
     public int CalculatePriceOfBread()
     {
@@ -30,6 +29,7 @@ namespace Bakery.Models
           totalPrice += finalDiscount;
         }
       }
+      else if
       else 
       {
           for(int i = 0; i < AmountOfBread; i++)
