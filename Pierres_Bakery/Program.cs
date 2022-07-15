@@ -19,7 +19,7 @@ namespace Bakery
       string answer = Console.ReadLine();
       if (answer == "Y" || answer == "y")
       {
-        Console.WriteLine("At Pierre's Bakery we sell bread and pastries ['B' to order bread 'P' to order pastries]");
+        Console.WriteLine("At Pierre's Bakery we sell bread and pastries. Each Pastry costs 2$ and your third one is half off. Each loaf of bread cost 5$ and you get every third loaf FREE! ['B' to order bread 'P' to order pastries]");
         string orderAnswer = Console.ReadLine();
         if( orderAnswer == "B" || orderAnswer == "b")
         {
