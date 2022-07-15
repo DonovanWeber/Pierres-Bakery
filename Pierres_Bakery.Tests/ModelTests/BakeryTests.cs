@@ -21,5 +21,11 @@ namespace PierresBakery.Tests
       int costOfOneBread = 5;
       Assert.AreEqual(costOfOneBread,newOrder.CalculatePriceOfBread(1));
     }
+    public void CalculatePriceOfBread_GetPriceOfTwoOrders_Int()
+    {
+      Bread newOrder = new Bread(2);
+      int costOfTwoBread = 10;
+      Assert.AreEqual(costOfTwoBread, newOrder.CalculatePriceOfBread(2));
+    }
   }
 }
