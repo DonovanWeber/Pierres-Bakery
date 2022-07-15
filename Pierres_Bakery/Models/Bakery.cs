@@ -29,7 +29,18 @@ namespace Bakery.Models
           totalPrice += finalDiscount;
         }
       }
-      else if
+      else if (AmountOfBread > 3)
+      {
+        int discount = 10;
+        int amountOfBreadAfterDiscount = AmountOfBread % 3; 
+        int discountedBread = AmountOfBread - amountOfBreadAfterDiscount;
+        int priceOfExtraBread = amountOfBreadAfterDiscount * _Price;
+        for (int i = 0; i <= amountOfBreadAfterDiscount; i += 3)
+        {
+          totalPrice += discountedBread / 3 * discount;
+        }
+        totalPrice += priceOfExtraBread;
+      }
       else 
       {
           for(int i = 0; i < AmountOfBread; i++)
