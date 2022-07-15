@@ -16,7 +16,6 @@ namespace Bakery.Models
     }
     public int CalculatePriceOfBread()
     {
-      
       int totalPrice = 0;
       if (AmountOfBread == 0)
       {
@@ -26,9 +25,26 @@ namespace Bakery.Models
       {
         for(int i = 0; i < AmountOfBread; i++)
         {
-        totalPrice += _Price;
+          totalPrice += _Price;
         }
       }
+      else if (AmountOfBread % 3 == 0)
+      {
+        for(int i = 0; i < AmountOfBread; i += 3)
+        {
+          int Discount = 10;
+          int finalDiscount = (AmountOfBread / 3 )* Discount;
+          totalPrice += finalDiscount;
+        }
+      }
+      else 
+      {
+          for(int i = 0; i < AmountOfBread; i++)
+          {
+            totalPrice += _Price;
+          }
+      }
+      
       return totalPrice;
     }
 

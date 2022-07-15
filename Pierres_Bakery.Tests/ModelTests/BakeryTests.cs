@@ -33,7 +33,7 @@ namespace PierresBakery.Tests
     {
       Bread newOrder = new Bread(3);
       int costOfThreeBreadWithDiscount = 10;
-      Assert.AreEqual(costOfThreeBreadWithDiscount, newOrder.CalculatePriceOfBread());
+      Assert.AreEqual(costOfThreeBreadWithDiscount, 9);
     }
   }
 }
