@@ -19,15 +19,11 @@ namespace Bakery
       string answer = Console.ReadLine();
       if (answer == "Y" || answer == "y")
       {
-        Console.WriteLine("At Pierre's Bakery we sell bread and pastries. Each Pastry costs 2$ and your third one is half off. Each loaf of bread cost 5$ and you get every third loaf FREE! ['B' to order bread 'P' to order pastries]");
+        Console.WriteLine("At Pierre's Bakery we sell bread and pastries. Each Pastry costs 2$ and your third one is half off. Each loaf of bread cost 5$ and you get every third loaf FREE! ['Y' to order 'Enter' to go back]");
         string orderAnswer = Console.ReadLine();
-        if( orderAnswer == "B" || orderAnswer == "b")
+        if( orderAnswer == "Y" || orderAnswer == "y")
         {
           Bread();
-        }
-        else if (orderAnswer == "P" || orderAnswer == "p")
-        {
-          Pastry();
         }
         else 
         {
@@ -39,53 +35,42 @@ namespace Bakery
     static void Bread()
     {
       Console.WriteLine("How many loaves of bread would you like to order?");
-      string stringAnswer = Console.ReadLine();
-      int answer = int.Parse(stringAnswer);
-      Bread userOrder = new Bread(answer);
-      if(answer > 1)
-      {
-      Console.WriteLine("_____________________");
-      Console.WriteLine(answer + " loaves of bread will cost $" + userOrder.CalculatePriceOfBread());
-      }
-      else
-      { 
-        Console.WriteLine("_____________________");
-        Console.WriteLine(answer + " loaf of bread will cost $" + userOrder.CalculatePriceOfBread());
-      }
-      Console.WriteLine("Would you like to order a pastry or leave the bakery ['Y' to order a pastry 'Enter' to go leave]");
-      string secondAnswer = Console.ReadLine();
-      if (secondAnswer == "Y" || secondAnswer == "y")
-      {
-        Pastry();
-      }
-      else
-      {
-        Main();
-      }
-    }
-    static void Pastry()
-    {
+      string stringAnswer1 = Console.ReadLine();
+      int breadAnswer = int.Parse(stringAnswer1);
+      Bread userOrder1 = new Bread(breadAnswer);
       Console.WriteLine("How many pastries would you like to order?");
-      string stringAnswer = Console.ReadLine();
-      int answer = int.Parse(stringAnswer);
-      Pastry userOrder = new Pastry(answer);
-      if (answer > 1)
+      string stringAnswer2 = Console.ReadLine();
+      int pastryAnswer = int.Parse(stringAnswer2);
+      Pastry userOrder2 = new Pastry(pastryAnswer);
+      if(breadAnswer >= 1 && pastryAnswer >= 1)
       {
         Console.WriteLine("_____________________");
-        Console.WriteLine(answer + " pastries will cost $" + userOrder.CalculatePriceOfPastry());
+        Console.WriteLine("You ordered " + breadAnswer + " loaf/loaves of bread and " + pastryAnswer + " pastry/pastries Your total cost will be: $" + (userOrder1.CalculatePriceOfBread() + userOrder2.CalculatePriceOfPastry()));
       }
-      else
+      else if (breadAnswer <= 0 && pastryAnswer <= 0 )
       {
-        Console.WriteLine("_____________________");
-        Console.WriteLine(answer + " pastry will cost $" + userOrder.CalculatePriceOfPastry());
+        Console.WriteLine("You might have pressed a wrong button or entered a non-usable number");
+        Console.WriteLine("Please order at least one loaf of bread or pastry to get your total cost.");
+        Console.WriteLine("['Y' to go back to the menu or 'Enter' to go back to the the start]");
+         string answer = Console.ReadLine();
+        if (answer == "Y" || answer == "y")
+        {
+          Bread();
+        }
+        else 
+        {
+          Main();
+        }
       }
-      Console.WriteLine("Would you like to order bread");
-      string secondAnswer = Console.ReadLine();
-      if (secondAnswer == "Y" || secondAnswer == "y")
+      else if(pastryAnswer == 0)
       {
-        Bread();
+        Console.WriteLine("You ordered " + breadAnswer + " loaf/loaves of bread Your total cost will be: $" + userOrder1.CalculatePriceOfBread());
       }
-      else
+      else if(breadAnswer == 0)
+      {
+         Console.WriteLine("You ordered " + pastryAnswer + " pastry/pastries Your total cost will be: $" + userOrder2.CalculatePriceOfPastry());
+      }
+      else 
       {
         Main();
       }
